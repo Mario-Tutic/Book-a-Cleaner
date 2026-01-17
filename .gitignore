@@ -4,10 +4,18 @@ backend/__pycache__/
 backend/.env
 *.pyc
 
-# Frontend (React)
-frontend/node_modules/
-frontend/dist/
-frontend/.env
+# Frontend
+frontend/book-a-cleaner/node_modules/
+frontend/book-a-cleaner/dist/
+frontend/book-a-cleaner/.env
+frontend/book-a-cleaner/.env.local
+frontend/book-a-cleaner/.env.*.local
+frontend/book-a-cleaner/npm-debug.log*
+frontend/book-a-cleaner/yarn-debug.log*
+frontend/book-a-cleaner/yarn-error.log*
+frontend/book-a-cleaner/.DS_Store
+frontend/book-a-cleaner/.vscode/
+frontend/book-a-cleaner/.idea/
 
 # General
 .env
