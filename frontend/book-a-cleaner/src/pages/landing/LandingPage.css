@@ -1,0 +1,43 @@
+.banner{
+    padding: 50px 0px 50px 0px;
+    display: flex;
+    font-size: 64px;
+    justify-content: center;
+    align-items: center;
+    font-weight:bold;
+    background-color: rgb(190, 190, 190);
+    color: white;
+}
+
+.banner-text{
+    text-align: center;
+    color: white;
+}
+
+
+.register{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.register-link{
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color:  rgb(190, 190, 190);
+    font-weight: bold;
+    color: white;
+}
+.register-link:hover{
+    background-color: rgb(210, 210, 210);
+    transition: 0.2s;
+}
+.register-message{
+    font-size: 32px;
+    font-weight: bold;
+}
+
