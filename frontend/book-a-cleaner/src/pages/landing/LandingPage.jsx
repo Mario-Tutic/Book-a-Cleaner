@@ -19,7 +19,7 @@ export function LandingPage() {
                 <div className='register-message'>
                     Get started and register today:
                 </div>
-                <Link>
+                <Link to="/auth/register">
                     <div className='register-link'>
                         Click here and register
                     </div>
