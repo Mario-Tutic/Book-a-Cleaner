@@ -36,7 +36,7 @@ export function Login() {
             );
             const token = response.data.access_token;
 
-            login({ email: loginData.email }, token);
+            login(response.data.user, token);
 
             console.log(response.data);
             navigate("/home"); // React route, not backend URL

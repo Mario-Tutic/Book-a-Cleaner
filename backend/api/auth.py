@@ -155,7 +155,12 @@ def login(
     # 4️⃣ Return access token in body
     return {
         "access_token": access_token,
-        "token_type": "bearer"
+        "token_type": "bearer",
+        "user":{
+            "id":user.id,
+            "email":user.email,
+            "role":user.role
+        }
     }
 
 @router.get("/me")
@@ -222,5 +227,10 @@ def refresh_token(
     # 6️⃣ Return new access token
     return {
         "access_token": new_access_token,
-        "token_type": "bearer"
+        "token_type": "bearer",
+        "user":{
+            "id":user.id,
+            "email":user.email,
+            "role":user.role
+        }
     }
