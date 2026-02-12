@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 import { FaBroom } from "react-icons/fa";
 
-import "./Register.css"
+import "./Auth.css"
 
 export function Register() {
     const navigate=useNavigate()
@@ -26,11 +26,11 @@ export function Register() {
 
         const response = await axios.post("http://localhost:8000/auth/register",registrationData)
         console.log(response)
-        navigate("http://localhost:8000/auth/login");
+        navigate("http://localhost:5173/auth/login");
     };
 
     return (
-        <div className="register-form-container">
+        <div className="auth-form-container">
             <div className="logo-container">
                 <div className="logo">
                     <FaBroom size={42} />
@@ -39,7 +39,7 @@ export function Register() {
                     Book a cleaner
                 </p>
             </div>
-            <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
+            <form className="auth-form" onSubmit={handleSubmit(onSubmit)}>
                 <div className="input-container">
                     <input
                         type="text"

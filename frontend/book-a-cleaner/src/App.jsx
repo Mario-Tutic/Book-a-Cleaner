@@ -4,6 +4,7 @@ import {Routes,Route} from 'react-router'
 import { LandingPage } from './pages/landing/LandingPage'
 import { Register } from './pages/auth/Register'
 import {Login} from './pages/auth/Login' 
+import { HomePage } from './pages/home/HomePage'
 
 import './App.css'
 
@@ -14,6 +15,7 @@ function App() {
       <Route path='' element={<LandingPage/>}></Route>
       <Route path='auth/register' element={<Register/>}></Route>
       <Route path='auth/login' element={<Login/>}></Route>
+      <Route path='home' element={<HomePage/>}></Route>
 
 
     </Routes>

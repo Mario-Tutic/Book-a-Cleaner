@@ -18,7 +18,7 @@ export function Header(){
                     <Link>Pricing</Link>
                 </div>
                 <div className='right-section'>
-                    <Link>Sign in</Link>
+                    <Link to="/auth/login">Sign in</Link>
                 </div>
             </div>
         
