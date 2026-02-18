@@ -1,0 +1,50 @@
+.main-content{
+    display: flex;
+    justify-content: center;
+}
+
+.section-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: larger;
+}
+
+
+.upcoming-cleaning-list{
+    display: flex;
+}
+
+.cleaning{
+    display: flex;
+    flex-direction: row;
+
+    border: 1px solid rgb(186, 186, 186);
+    border-radius: 5px;
+    column-gap: 10px;
+    max-width: 500px;
+    padding: 5px 10px;
+}
+
+.cleaning-info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.property-image{
+    width: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.upcoming-cleanings-list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.property-name{
+    color: #007bff;
+    font-size: 18px;
+    font-weight: bold;
+}

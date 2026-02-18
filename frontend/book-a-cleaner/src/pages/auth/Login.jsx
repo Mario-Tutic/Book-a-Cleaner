@@ -39,7 +39,13 @@ export function Login() {
             login(response.data.user, token);
 
             console.log(response.data);
-            navigate("/home"); // React route, not backend URL
+            if(response.data.user.role=="owner"){
+                navigate("/owner/dashboard"); // React route, not backend URL
+            }
+            else if(response.data.user.role=="cleaner"){
+                navigate("/owner/cleaner");
+
+            }
         } catch (error) {
             console.error(error.response?.data || error.message);
         }

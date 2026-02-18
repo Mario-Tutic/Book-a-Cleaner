@@ -1,0 +1,10 @@
+.navbar-links{
+    display: flex;
+    column-gap: 30px;
+
+}
+
+.nav-item.active {
+  color: #007bff;
+  border-bottom: 3px solid #007bff; /* automatic underline */
+}
