@@ -1,0 +1,27 @@
+.properties-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-box{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    aspect-ratio: 1 / 1;
+}
+
+.add-new-property{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(246, 246, 246);
+    font-size: 70px;
+    color: gray;
+    cursor: pointer;
+}
+
+.add-new-property:hover{
+    font-weight: bold;
+    transition: 0.15s;
+}

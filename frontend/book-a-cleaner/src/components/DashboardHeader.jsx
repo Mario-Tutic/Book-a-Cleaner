@@ -29,10 +29,10 @@ export function DashboardHeader() {
                         Bookings
                     </NavLink>
                     <NavLink
-                        to="/profile"
+                        to="/owner/properties"
                         className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
                     >
-                        Profile
+                        MyProperties
                     </NavLink>
                     <NavLink
                         to="/logout"

@@ -6,6 +6,7 @@ import { Register } from './pages/auth/Register'
 import { Login } from './pages/auth/Login'
 import { HomePage } from './pages/home/HomePage'
 import { OwnerDashboard } from './pages/ownerDashboard/OwnerDashboard'
+import {MyProperties} from './pages/ownerDashboard/MyProperties'
 import { CleanerDashboard } from './pages/cleanerDashboard/cleanerDashboard'
 import {ProtectedRoute} from './components/ProtectedRoute'
 import './App.css'
@@ -25,6 +26,19 @@ function App() {
             <OwnerDashboard />
           </ProtectedRoute>
         }></Route>
+      <Route
+        path='owner/properties'
+        element={
+          <ProtectedRoute allowedRoles={["owner"]}>
+            <MyProperties>
+
+            </MyProperties>
+
+          </ProtectedRoute>
+        }
+        >
+
+      </Route>
       <Route path='cleaner/dashboard' element={<CleanerDashboard />}></Route>
 
 

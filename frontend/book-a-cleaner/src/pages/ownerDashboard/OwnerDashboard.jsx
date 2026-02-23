@@ -1,8 +1,11 @@
 import { DashboardHeader } from '../../components/DashboardHeader'
 import { useAuth } from "../../AuthContext";
 
+import { FilterPanell } from './FilterPanell';
+
 import './OwnerDashboard.css';
-import { MapPinHouse,CalendarCheck } from "lucide-react";
+
+import { MapPinHouse, CalendarCheck } from "lucide-react";
 
 import houseImage from '../../assets/house.jpg'
 
@@ -47,36 +50,38 @@ export function OwnerDashboard() {
                 </p>
             </div>
             <div className='main-content'>
-                <div>
-                
-                </div>
+                <FilterPanell></FilterPanell>
                 <div className='upcoming-cleanings-list'>
-                {properties.map(property => (
-                    <div key={property.id} className='cleaning'>
-                        <div className='property-image-container'>
-                            <img className='property-image' src={houseImage} alt="" />
+                    {properties.map(property => (
+                        <div key={property.id} className='cleaning'>
+                            <div className='property-image-container'>
+                                <img className='property-image' src={houseImage} alt="" />
 
+                            </div>
+                            <div className='cleaning-info'>
+                                <div className='property-name'>
+                                    Love house
+
+                                </div>
+                                <div className='property-address'>
+                                    <MapPinHouse size={20} />
+                                    {property.address}
+
+                                </div>
+                                <div className='cleaning-date'>
+                                    <CalendarCheck size={20} />
+                                    14 feb, 2pm
+
+                                </div>
+
+                            </div>
                         </div>
-                        <div className='cleaning-info'>
-                            <div className='property-name'>
-                                Love house
+                    ))}
+                </div>
+                <div>
+                    Some content on right 
 
-                            </div>
-                            <div className='property-address'>
-                                <MapPinHouse size={20}/>
-                                {property.address}
-
-                            </div>
-                            <div className='cleaning-date'>
-                                <CalendarCheck size={20}/>
-                                14 feb
-
-                            </div>
-
-                        </div>
-                    </div>
-                ))}
-            </div>
+                </div>
 
             </div>
 
