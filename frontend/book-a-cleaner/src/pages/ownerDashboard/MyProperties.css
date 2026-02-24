@@ -22,6 +22,6 @@
 }
 
 .add-new-property:hover{
-    font-weight: bold;
-    transition: 0.15s;
+    font-size: 80px;
+    transition: 0.1s;
 }

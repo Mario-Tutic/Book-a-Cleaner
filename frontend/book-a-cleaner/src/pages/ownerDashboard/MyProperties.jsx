@@ -1,7 +1,12 @@
-import { DashboardHeader } from "../../components/DashboardHeader"
-import './MyProperties.css'
+import { useState } from "react";
 
+import { DashboardHeader } from "../../components/DashboardHeader"
+import './MyProperties.css';
+import './Modal.css';
+import houseImage from '../../assets/house.jpg'
 export function MyProperties() {
+    const [showModal, setShowModal] = useState(false);
+
     const properties = [
         {
             id: 1,
@@ -28,9 +33,10 @@ export function MyProperties() {
         <>
             <DashboardHeader></DashboardHeader>
             <div className="main-content">
-                <div className="properties-list">
-                    <div className="grid-box add-new-property">
-                            +
+                <div className={`properties-list + ${showModal? "blurred":""}`} >
+                    <div className="grid-box add-new-property"
+                        onClick={() => setShowModal(true)}>
+                        +
                     </div>
                     {properties.map(property => (
                         <div className="grid-box">
@@ -44,8 +50,18 @@ export function MyProperties() {
                         </div>
                     ))}
                 </div>
-
             </div>
+            {showModal && (
+                <div className="modal-overlay">
+                    <div className="modal">
+                        <h2>Add Property</h2>
+                        <input placeholder="Property name" />
+                        <button>Save</button>
+                        <button onClick={() => setShowModal(false)}>Close</button>
+                    </div>
+                </div>
+
+            )}
 
         </>
     )
