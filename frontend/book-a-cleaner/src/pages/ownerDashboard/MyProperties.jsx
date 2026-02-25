@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { DashboardHeader } from "../../components/DashboardHeader"
+import { AddNewPropertyForm } from "./components/AddNewPropertyForm";
 import './MyProperties.css';
 import './Modal.css';
 import houseImage from '../../assets/house.jpg'
@@ -33,13 +34,14 @@ export function MyProperties() {
         <>
             <DashboardHeader></DashboardHeader>
             <div className="main-content">
-                <div className={`properties-list + ${showModal? "blurred":""}`} >
+                <div className={`properties-list + ${showModal ? "blurred" : ""}`} >
                     <div className="grid-box add-new-property"
                         onClick={() => setShowModal(true)}>
                         +
                     </div>
                     {properties.map(property => (
                         <div className="grid-box">
+                            <img className="grid-box-background" src={houseImage} alt="" />
                             <p>
                                 {property.id}
                             </p>
@@ -54,10 +56,8 @@ export function MyProperties() {
             {showModal && (
                 <div className="modal-overlay">
                     <div className="modal">
-                        <h2>Add Property</h2>
-                        <input placeholder="Property name" />
-                        <button>Save</button>
-                        <button onClick={() => setShowModal(false)}>Close</button>
+                        <AddNewPropertyForm showModal={showModal} setShowModal={setShowModal}></AddNewPropertyForm>
+
                     </div>
                 </div>
 

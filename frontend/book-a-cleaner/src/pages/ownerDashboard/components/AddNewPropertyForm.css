@@ -1,0 +1,69 @@
+.add-new-property-form-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.add-new-property-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+}
+
+.close-button{
+    border: none;
+    background-color: rgb(247, 247, 247);
+    width: 24px;
+    height: 24px;
+    padding: 1px;
+    border-radius: 100px;
+}
+.close-button:hover{
+    background-color: rgb(222, 222, 222);
+    transition: 0.15s;
+}
+
+.submit-button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-button{
+    background-color: rgb(247, 247, 247);
+    border-radius: 5px;
+    border: solid black 0px;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.submit-button:hover{
+    cursor: pointer;
+    background-color: rgb(222, 222, 222);
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+}
+
+.form-validation-message{
+    color: red;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    align-self: end;
+}
+
+.input-container select,textarea{
+    border: solid 1px black;
+    border-radius: 8px;
+    padding: 10px;
+}

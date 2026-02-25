@@ -21,6 +21,7 @@
 .modal {
   background: white;
   padding: 30px;
+  padding-top: 0px;
   border-radius: 12px;
   width: 400px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
