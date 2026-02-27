@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from sqlmodel import SQLModel
 from db.session import engine
-from api import auth
+from api import auth, properties
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Book a Cleaner API")
@@ -25,3 +25,4 @@ def on_startup():
 
 # Include auth routes
 app.include_router(auth.router)
+app.include_router(properties.router)

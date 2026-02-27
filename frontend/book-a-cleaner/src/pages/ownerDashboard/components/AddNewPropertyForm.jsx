@@ -1,6 +1,7 @@
 import './AddNewPropertyForm.css'
 import { X } from 'lucide-react'
 import { useForm } from "react-hook-form";
+import axios from 'axios';
 
 export function AddNewPropertyForm({ showModal, setShowModal }) {
     const {
@@ -11,9 +12,21 @@ export function AddNewPropertyForm({ showModal, setShowModal }) {
     } = useForm();
 
 
-    const onSubmit = (e) => {
-        e.preventDefault(); // prevents page reload
-        console.log("Form submitted");
+    const onSubmit = async (data) => {
+        //e.preventDefault(); // prevents page reload
+        try {
+            const response = await axios.post(
+                "http://localhost:8000/property/create",
+                data
+            );
+            reset();
+
+            console.log(response.data);
+
+        } catch (err) {
+            console.log(data)
+            console.error(err);
+        }
     };
     return (
         <>
@@ -91,7 +104,7 @@ export function AddNewPropertyForm({ showModal, setShowModal }) {
                     <div className='input-container'>
                         <label>Property Type</label>
                         <select
-                            {...register("propertyType", {
+                            {...register("property_type", {
                                 required: "Please select property type"
                             })}
                         >
@@ -101,7 +114,7 @@ export function AddNewPropertyForm({ showModal, setShowModal }) {
                             <option value="studio">Studio</option>
                         </select>
                         <div className='form-validation-message'>
-                            {errors.propertyType ? errors.propertyType.message : "\u00A0"}
+                            {errors.property_type ? errors.property_type.message : "\u00A0"}
                         </div>
                     </div>
 
@@ -139,7 +152,7 @@ export function AddNewPropertyForm({ showModal, setShowModal }) {
                         <div className='input-validation-messsage'>
 
                         </div>
-                        {errors.notes ?errors.notes.message:"\u00A0"}
+                        {errors.notes ? errors.notes.message : "\u00A0"}
                     </div>
 
 

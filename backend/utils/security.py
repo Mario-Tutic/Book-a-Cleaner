@@ -79,8 +79,9 @@ def create_refresh_token(
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 def get_current_user(token: str = Depends(oauth2_scheme)):
+    #FOR NOW DOESNT CHECK EXISTANCE IN DB BUT I CAN IMPLEMENT THIS LATER
     try:
-        #JWT encode auto verifies JWT token
+        #JWT decode auto verifies JWT token
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         user_id: str = payload.get("sub")
         if user_id is None:

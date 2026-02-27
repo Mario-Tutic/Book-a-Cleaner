@@ -106,7 +106,7 @@ from fastapi import Response
 from datetime import timedelta
 
 # Adjust your expiration times
-ACCESS_TOKEN_EXPIRE_MINUTES = 1
+ACCESS_TOKEN_EXPIRE_MINUTES = 5
 REFRESH_TOKEN_EXPIRE_DAYS = 7
 
 @router.post("/login")
