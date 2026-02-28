@@ -1,8 +1,11 @@
-from sqlmodel import SQLModel, Field
+from sqlmodel import SQLModel, Field, Column
+from sqlalchemy.dialects.postgresql import ARRAY
+
 from typing import Optional
 from datetime import date, time
 
 from datetime import datetime
+from sqlalchemy import String
 
 class User(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
@@ -30,3 +33,6 @@ class Property(SQLModel, table=True):
     notes: Optional[str] = None
     created_at: datetime = Field(default_factory=datetime.utcnow)
     owner_id: int = Field(foreign_key="user.id")
+    images_paths: list[str] = Field(
+        sa_column=Column(ARRAY(String))
+    )

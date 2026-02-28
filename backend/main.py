@@ -3,8 +3,11 @@ from sqlmodel import SQLModel
 from db.session import engine
 from api import auth, properties
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI(title="Book a Cleaner API")
+# Mount the uploads folder to make it accessible via /uploads
+app.mount("/uploads", StaticFiles(directory="api/uploads"), name="uploads")
 
 origins = [
     "http://localhost:5173",  # React dev server
